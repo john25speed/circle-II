@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Вращающийся круг аккордов</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+            margin: 0;
+            overflow: hidden;
+        }
+        .outer-circle, .inner-circle {
+            position: absolute;
+            border-radius: 50%;
+        }
+        .outer-circle {
+            width: 300px;
+            height: 300px;
+            background-color: #D1C4E9;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            animation: rotate 10s linear infinite;
+        }
+        .inner-circle {
+            width: 200px;
+            height: 200px;
+            background-color: #B3E5FC;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1em;
+            text-align: center;
+        }
+        .text-container {
+            position: absolute;
+            font-family: Arial, sans-serif;
+            color: #000;
+        }
+        .text-container span {
+            position: absolute;
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        /* Анимация вращения */
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        /* Расположение текста для внешнего круга */
+        .C { top: 5%; left: 48%; }
+        .G { top: 18%; right: 5%; }
+        .D { top: 50%; right: 5%; }
+        .A { bottom: 18%; right: 5%; }
+        .E { bottom: 5%; left: 48%; }
+        .B { bottom: 18%; left: 5%; }
+        .Fsharp { top: 50%; left: 5%; }
+        .F { top: 18%; left: 5%; }
+
+        /* Расположение текста для внутреннего круга */
+        .Am { top: 25%; left: 50%; transform: translate(-50%, -50%); }
+        .Em { top: 50%; right: 25%; transform: translate(50%, -50%); }
+        .Bm { bottom: 25%; right: 25%; transform: translate(50%, 50%); }
+        .Fsharpm { bottom: 50%; left: 50%; transform: translate(-50%, 50%); }
+        .Dm { top: 50%; left: 25%; transform: translate(-50%, -50%); }
+        .Gm { top: 25%; right: 50%; transform: translate(50%, -50%); }
+    </style>
+</head>
+<body>
+    <div class="outer-circle">
+        <div class="text-container">
+            <!-- Внешний круг нот -->
+            <span class="C">C</span>
+            <span class="G">G</span>
+            <span class="D">D</span>
+            <span class="A">A</span>
+            <span class="E">E</span>
+            <span class="B">B</span>
+            <span class="Fsharp">F#</span>
+            <span class="F">F</span>
+        </div>
+        <div class="inner-circle">
+            <div class="text-container">
+                <!-- Внутренний круг аккордов -->
+                <span class="Am">Am</span>
+                <span class="Em">Em</span>
+                <span class="Bm">Bm</span>
+                <span class="Fsharpm">F#m</span>
+                <span class="Dm">Dm</span>
+                <span class="Gm">Gm</span>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
